@@ -37,20 +37,50 @@ export const typeDefs = `#graphql
   }
 
     type Mutation {
-        addCategory(
-            CategoryName: String!
-            Description: String
-        ): Categories!
+    addCategory(
+        CategoryName: String!
+        Description: String
+    ): Categories!
 
-        updateCategory(
-            CategoryID: Int!
-            CategoryName: String
-            Description: String
-        ): Categories
+    updateCategory(
+        CategoryID: Int!
+        CategoryName: String
+        Description: String
+    ): Categories
 
-        deleteCategory(
-            CategoryID: Int!
-        ): Boolean!
+    deleteCategory(CategoryID: Int!): Boolean!
+
+    addProduct(
+        ProductName: String!
+        SupplierID: Int!
+        CategoryID: Int!
+        UnitPrice: Float
+    ): Products!
+
+    updateProduct(
+        ProductID: Int!
+        ProductName: String
+        SupplierID: Int
+        CategoryID: Int
+        UnitPrice: Float
+    ): Products
+
+    deleteProduct(ProductID: Int!): Boolean!
+
+    addSupplier(
+        CompanyName: String!
+        ContactName: String
+        Country: String
+    ): Suppliers!
+
+    updateSupplier(
+        SupplierID: Int!
+        CompanyName: String
+        ContactName: String
+        Country: String
+    ): Suppliers
+
+    deleteSupplier(SupplierID: Int!): Boolean!
     }
 
 `;
